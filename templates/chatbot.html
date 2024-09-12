@@ -1,0 +1,95 @@
+<!-- templates/chatbot.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div id="chatbot-container">
+        <div class="header">
+            <h2>RAG MODEL</h2>
+            <p><b>Indexed documents:</b></p>
+            <ul id="list-documents">
+            </ul>
+        </div>
+
+        <div id="chatbox">
+            <div id="messages"></div>
+
+            <div style="margin-bottom: 8px;">
+                <b>Frequent questions:</b>
+            </div>
+
+            <div id="questions">
+
+            </div>
+
+            <div class="send">
+                <input id="user-input" type="text" placeholder="Write your question here...">
+                <button onclick="sendMessage()">
+                    <div id="loading-box" class="loading-box" style="display: none;">
+                        <div class="spinner"></div>
+                    </div>
+                    <span id="send-text">Send</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        getDocuments();
+        getQuestions();
+
+        async function getDocuments() {
+            const response = await fetch(`/get-files`);
+            const list = document.getElementById('list-documents');
+            const data = await response.json();
+
+            for(let item of data.response) {
+                const file = item.split('documents/input_documents/')[1];
+                list.innerHTML += `<li>${file}</li>`
+            }
+        }
+
+        async function getQuestions() {
+            const response = await fetch(`/get-questions`);
+            const list = document.getElementById('questions');
+            const data = await response.json();
+
+            for(let question of data.rag_test_questions) {
+                list.innerHTML += `<div class="question" onclick="sendMessage('${question.question.replace(/'/g, "\\'")}')">${question.question}</li>`
+            }
+        }
+
+        async function sendMessage(message=undefined) {
+            const userInput = document.getElementById('user-input').value;
+            const messages = document.getElementById('messages');
+            const loadingBox = document.getElementById('loading-box');
+            const sendText = document.getElementById('send-text');
+
+            messages.innerHTML += `<div class="user-message-container"><div class="message user-message">${message ? message : userInput}</div></div>`;
+            document.getElementById('user-input').value = '';
+            document.getElementById('user-input').disabled = true;
+
+            loadingBox.style.display = 'flex';
+            sendText.style.display = 'none';
+
+            const response = await fetch(`/answer?query=${encodeURIComponent(message ? message : userInput)}`);
+            const data = await response.json();
+
+            loadingBox.style.display = 'none';
+            sendText.style.display = 'flex';
+            document.getElementById('user-input').disabled = false;
+
+            messages.innerHTML += `<div class="bot-message-container"><div class="message bot-message">${data.response.replace(/\n/g, "<br/>").replace(/\*\*(.*?)\*\*/g, "<b>$1</b>")}</div></div>`;
+
+            setTimeout(() => {
+                messages.scrollTop = messages.scrollHeight;
+            }, 100);
+        }
+    </script>
+</body>
+</html>

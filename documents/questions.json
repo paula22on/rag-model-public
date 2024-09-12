@@ -1,0 +1,109 @@
+{
+    "rag_test_questions": [
+      {
+        "id": 1,
+        "topic": "Photosynthesis",
+        "question": "Describe the light-dependent reactions of photosynthesis and explain their role in the overall process.",
+        "difficulty": "Medium",
+        "question_type": "Explanatory"
+      },
+      {
+        "id": 2,
+        "topic": "Japanese Cuisine",
+        "question": "What is the significance of 'umami' in traditional Japanese cooking, and how is it typically achieved?",
+        "difficulty": "Medium",
+        "question_type": "Conceptual"
+      },
+      {
+        "id": 3,
+        "topic": "Inflation",
+        "question": "Compare and contrast demand-pull inflation and cost-push inflation. Provide an example of each.",
+        "difficulty": "Hard",
+        "question_type": "Comparative"
+      },
+      {
+        "id": 4,
+        "topic": "Basketball Strategy",
+        "question": "How has the importance and usage of the three-point shot in basketball strategy evolved from the 1980s to the 2020s?",
+        "difficulty": "Medium",
+        "question_type": "Chronological Analysis"
+      },
+      {
+        "id": 5,
+        "topic": "Amazon Rainforest",
+        "question": "Describe the characteristics of oxisols in the Amazon rainforest and explain their impact on vegetation.",
+        "difficulty": "Medium",
+        "question_type": "Descriptive and Analytical"
+      },
+      {
+        "id": 6,
+        "topic": "Photosynthesis",
+        "question": "What is the role of chlorophyll in photosynthesis, and where is it located within a plant cell?",
+        "difficulty": "Easy",
+        "question_type": "Factual"
+      },
+      {
+        "id": 7,
+        "topic": "Japanese Cuisine",
+        "question": "Explain the concept of 'shun' in Japanese cuisine and provide an example of how it influences menu creation.",
+        "difficulty": "Hard",
+        "question_type": "Conceptual and Application"
+      },
+      {
+        "id": 8,
+        "topic": "Inflation",
+        "question": "How might a natural disaster contribute to inflation in an economy? Provide a specific example to illustrate your answer.",
+        "difficulty": "Hard",
+        "question_type": "Application and Synthesis"
+      },
+      {
+        "id": 9,
+        "topic": "Basketball Strategy",
+        "question": "What is 'positionless basketball,' and how has it impacted team compositions and playing strategies in the modern era?",
+        "difficulty": "Medium",
+        "question_type": "Conceptual and Analytical"
+      },
+      {
+        "id": 10,
+        "topic": "Amazon Rainforest",
+        "question": "What are várzeas, and why are they important for the Amazon rainforest ecosystem?",
+        "difficulty": "Medium",
+        "question_type": "Definitional and Explanatory"
+      },
+      {
+        "id": 11,
+        "topic": "Photosynthesis",
+        "question": "How do the light-independent reactions (Calvin Cycle) of photosynthesis utilize the products of the light-dependent reactions?",
+        "difficulty": "Hard",
+        "question_type": "Process Understanding"
+      },
+      {
+        "id": 12,
+        "topic": "Japanese Cuisine",
+        "question": "Compare the culinary traditions of the Kanto and Kansai regions in Japan. What are the main differences in flavors and cooking styles?",
+        "difficulty": "Hard",
+        "question_type": "Comparative Analysis"
+      },
+      {
+        "id": 13,
+        "topic": "Inflation",
+        "question": "Explain the concept of the wage-price spiral and its potential impact on long-term inflation rates.",
+        "difficulty": "Medium",
+        "question_type": "Conceptual and Cause-Effect"
+      },
+      {
+        "id": 14,
+        "topic": "Basketball Strategy",
+        "question": "How did the tightening of hand-checking rules in the 2000s impact offensive strategies in basketball?",
+        "difficulty": "Medium",
+        "question_type": "Cause-Effect Analysis"
+      },
+      {
+        "id": 15,
+        "topic": "Amazon Rainforest",
+        "question": "Describe the topographical features of the Guiana Highlands and explain how they contribute to the Amazon rainforest's biodiversity.",
+        "difficulty": "Hard",
+        "question_type": "Descriptive and Analytical"
+      }
+    ]
+  }
